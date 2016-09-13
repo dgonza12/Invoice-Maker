@@ -7,15 +7,22 @@
 #include <iostream>
 using namespace std;
 class Invoice{
+
     private:
     int invoicenum;
     string From;
     string To;
+    string** Charges;
+    int _size;
+
     public:
-    Invoice();//default constructor
-    void setFrom(string name);
-    void setTo(string name);
-    void printinvoice();
+    const int& size; //Number of charges in invoice
+    Invoice();//Default constructor
+    void setFrom(string name);//From Mutator.
+    void setTo(string name);//To Mutator.
+    void insertcharge(string name, double price);//add a charge to the invoice.
+    void printinvoice(); //Print the Invoice to the console.
+    double gettotal();
 };
 
 
